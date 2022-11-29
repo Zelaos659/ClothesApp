@@ -39,5 +39,10 @@ namespace LogPassTwo
         {
             Close();
         }
+
+        private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

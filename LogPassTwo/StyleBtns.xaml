@@ -383,15 +383,36 @@
 
                 <ControlTemplate TargetType="{x:Type local:NavButton}">
 
-                    <Border x:Name="back" Width="34" Height="34" Background="Transparent" Margin="0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border x:Name="back" 
+                            Width="28" 
+                            Height="28" 
+                            Margin="0,5,0,0" 
+                            CornerRadius="4" 
+                            Background="Transparent">
 
-                        <Path Fill="Black" VerticalAlignment="Center" HorizontalAlignment="Left" Width="34" Height="34" Data="{TemplateBinding Icon}"/>
+                        <Path x:Name="icon"
+                              Fill="Black" 
+                              Width="24" 
+                              Height="24" 
+                              Data="{TemplateBinding Icon}"/>
                         
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        
-                        
+
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="Background" TargetName="back" Value="#B286DE"/>
+                            <Setter Property="Fill" TargetName="icon" Value="Black"/>
+
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+
+                            <Setter Property="Background" TargetName="back" Value="#B286DE"/>
+                            <Setter Property="Fill" TargetName="icon" Value="Black"/>
+
+                        </Trigger>
                         
                     </ControlTemplate.Triggers>
                     
