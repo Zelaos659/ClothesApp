@@ -42,7 +42,8 @@ namespace LogPassTwo
 
         private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (sidebar.SelectedItem == ProfileNav) AddNav.Visibility = Visibility.Visible;
+            else AddNav.Visibility = Visibility.Hidden;
         }
     }
 }
