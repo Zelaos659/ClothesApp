@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:LogPassTwo">
+                    xmlns:local="clr-namespace:LogPassTwo"
+                    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
 
     <!--Style for Button-->
 
@@ -198,7 +199,10 @@
     <!--Style for InputBoxes-->
 
     <Style x:Key="InBox" TargetType="Control">
-        <Setter Property="FontSize" Value="20"/>
+        
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontFamily" Value="Bahnschrift"/>
+        
         <Setter Property="Template">
 
             <Setter.Value>
@@ -439,5 +443,7 @@
         </Setter>
         
     </Style>
+    
+    <!--  -->
 
 </ResourceDictionary>

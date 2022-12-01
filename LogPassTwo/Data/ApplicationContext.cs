@@ -9,7 +9,7 @@ namespace LogPass.Data
 {
     internal class ApplicationContext : DbContext
     {
-        public DbSet<Employee> Employees { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,8 +18,8 @@ namespace LogPass.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Entity<Employee>()
-                .HasIndex(p => p.login)
+                .Entity<User>()
+                .HasIndex(p => p.Phone)
                 .IsUnique();
         }
     }

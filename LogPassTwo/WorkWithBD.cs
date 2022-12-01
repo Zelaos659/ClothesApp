@@ -20,10 +20,10 @@ namespace LogPass
         {
             using (var BD = new ApplicationContext())
             {
-                var user = BD.Employees.FirstOrDefault(x=>x.login == log);
+                var user = BD.Users.FirstOrDefault(x=>x.Phone == log);
                 if (user != null) 
                 {
-                    if (md5.hashPassword(pass) == user.password)
+                    if (md5.hashPassword(pass) == user.Password)
                     {
                         return true;
                     }
@@ -37,17 +37,17 @@ namespace LogPass
             using(var BD = new ApplicationContext())
             {
 
-                if (BD.Employees.FirstOrDefault(x => x.login == log) != null)
+                if (BD.Users.FirstOrDefault(x => x.Phone == log) != null)
                     return false;
 
-                var user = new Employee() 
+                var user = new User() 
                 { 
-                  login = log,
-                  password = md5.hashPassword(pass),
-                  role = "new"
+                  Phone = log,
+                  Password = md5.hashPassword(pass),
+                  Access = "new"
                 };
 
-                BD.Employees.Add(user);
+                BD.Users.Add(user);
                 BD.SaveChanges();
                 return true;
             }
