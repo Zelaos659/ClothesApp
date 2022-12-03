@@ -16,7 +16,7 @@ namespace LogPass
         /// <param name="log">Логин пользователя</param>
         /// <param name="pass">Пароль пользователя</param>
         /// <returns>Функция возвращает true если авторизация успешна, иначе false</returns>
-        public static bool Login(string log, string pass)
+        public static User Login(string log, string pass)
         {
             using (var BD = new ApplicationContext())
             {
@@ -25,10 +25,10 @@ namespace LogPass
                 {
                     if (md5.hashPassword(pass) == user.Password)
                     {
-                        return true;
+                        return user;
                     }
                 }
-                return false;
+                return null;
             }
         }
 

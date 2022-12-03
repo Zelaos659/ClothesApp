@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogPass.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace LogPassTwo
     /// </summary>
     public partial class MainWindow : Window
     {
+        static User user = new User();
         public MainWindow()
         {
             InitializeComponent();
@@ -44,6 +46,12 @@ namespace LogPassTwo
         {
             if (sidebar.SelectedItem == ProfileNav) AddNav.Visibility = Visibility.Visible;
             else AddNav.Visibility = Visibility.Hidden;
+
+            var selected = sidebar.SelectedItem as NavButton;
+            navframe.Navigate(selected.NavUri);
+            
+            TitleIcon.Data = selected.Icon;
+            TitleName.Text = $"Clothes | {selected.NavText}"; 
         }
     }
 }
