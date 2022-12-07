@@ -11,23 +11,75 @@
 
     <Grid>
 
-        <xctk:MaskedTextBox x:Name="phoneBox" 
-                            Width="230"
-                            Height="34"
-                            VerticalAlignment="Top"
-                            HorizontalAlignment="Center"
-                            Margin="0,140,0,0"
-                            MaxLength="18"
-                            Style="{StaticResource InBox}"/>
+        <!-- Labels -->
+
+        <TextBlock FontSize="24"
+                   Margin="213,75,0,0"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Text="Логин" FontFamily="Yu Gothic"/>
+
+        <TextBlock FontSize="24"
+                   Margin="201,165,0,0"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Text="Пароль" FontFamily="Yu Gothic"/>
+
+        <!-- InputBoxes -->
+
+        <TextBox x:Name="loginBox" 
+                   Width="230"
+                   Height="34"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="158,115,0,0"
+                   MaxLength="18"
+                   Style="{StaticResource InBox}"/>
 
         <PasswordBox x:Name="passBox"
                      Width="230"
                      Height="34"
-                     Margin="0,230,0,0"
+                     Margin="158,205,0,0"
                      VerticalAlignment="Top"
-                     HorizontalAlignment="Center"
+                     HorizontalAlignment="Left"
                      MaxLength="18"
                      Style="{StaticResource InBox}"/>
+
+        <!-- Buttons -->
+
+        <Button Width="230"
+                Height="34"
+                Margin="158,255,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Content="Login"
+                FontSize="15"
+                Style="{StaticResource MainBtn}"
+                Click="LoginBtn"/>
+
+
+        <Button Width="90"
+                Height="34"
+                Margin="158,300,0,0"
+                Background="#D9D9D9"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                BorderThickness="0"
+                Content="Register"
+                FontSize="15"
+                Style="{StaticResource MainBtn}"
+                Click="RegBtn"/>
+
+        <Button Width="130"
+                Height="34"
+                Margin="258,300,0,0"
+                Background="#D9D9D9"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Content="Forget password"
+                FontSize="15"
+                Style="{StaticResource MainBtn}"
+                Click="ResetBD"/>
 
     </Grid>
 </Page>

@@ -21,7 +21,8 @@ namespace LogPassTwo
     /// </summary>
     public partial class MainWindow : Window
     {
-        static User user = new User();
+        internal static User user = new User();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,8 +45,6 @@ namespace LogPassTwo
 
         private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (sidebar.SelectedItem == ProfileNav) AddNav.Visibility = Visibility.Visible;
-            else AddNav.Visibility = Visibility.Hidden;
 
             var selected = sidebar.SelectedItem as NavButton;
             navframe.Navigate(selected.NavUri);

@@ -10,7 +10,7 @@ namespace LogPass.Data
     {
         public int UserId { get; set; }
         
-        public string? Phone { get; set; }
+        public string? Login { get; set; }
 
         // Шифрование через set;
         public string? Password { get; set; }

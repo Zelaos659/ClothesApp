@@ -447,6 +447,24 @@
         
     </Style>
     
-    <!--  -->
+    <!-- ProductView -->
+
+    <Style TargetType="{x:Type local:ProductItem}">
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate>
+                    
+                    
+                    
+                </ControlTemplate>
+                
+            </Setter.Value>
+            
+        </Setter>
+        
+    </Style>
 
 </ResourceDictionary>

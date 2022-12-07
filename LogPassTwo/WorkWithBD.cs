@@ -20,7 +20,7 @@ namespace LogPass
         {
             using (var BD = new ApplicationContext())
             {
-                var user = BD.Users.FirstOrDefault(x=>x.Phone == log);
+                var user = BD.Users.FirstOrDefault(x=>x.Login == log);
                 if (user != null) 
                 {
                     if (md5.hashPassword(pass) == user.Password)
@@ -37,14 +37,14 @@ namespace LogPass
             using(var BD = new ApplicationContext())
             {
 
-                if (BD.Users.FirstOrDefault(x => x.Phone == log) != null)
+                if (BD.Users.FirstOrDefault(x => x.Login == log) != null)
                     return false;
 
                 var user = new User() 
                 { 
-                  Phone = log,
+                  Login = log,
                   Password = md5.hashPassword(pass),
-                  Access = "new"
+                  Access = "Admin"
                 };
 
                 BD.Users.Add(user);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogPass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,32 @@ namespace LogPassTwo.Pages
     /// </summary>
     public partial class AuthPage : Page
     {
+        MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public AuthPage()
         {
             InitializeComponent();
+        }
+
+        private void LoginBtn(object sender, RoutedEventArgs e)
+        {
+            MainWindow.user = WorkWithBD.Login(loginBox.Text,passBox.Password);
+            if (MainWindow.user.Access == "Admin") 
+                mainWindow.AddNav.Visibility = Visibility.Visible;
+
+            mainWindow.navframe.Content = null;
+            mainWindow.ProfileNav.NavUri = new Uri("Pages/Catalog.xaml");
+
+            // напохуй сделать тут же изменение навЛинков при авторизированном пользователе. 
+        }
+
+        private void RegBtn(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Итог: {WorkWithBD.Register(loginBox.Text, passBox.Password)}");
+        }
+
+        private void ResetBD(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
