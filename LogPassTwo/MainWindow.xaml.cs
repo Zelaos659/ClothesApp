@@ -47,10 +47,19 @@ namespace LogPassTwo
         {
 
             var selected = sidebar.SelectedItem as NavButton;
-            navframe.Navigate(selected.NavUri);
+
+            if (sidebar.SelectedItem != null)
+            {
+                navframe.Navigate(selected.NavUri);
+                TitleIcon.Data = selected.Icon;
+                TitleName.Text = $"Clothes | {selected.NavText}";
+            }
             
-            TitleIcon.Data = selected.Icon;
-            TitleName.Text = $"Clothes | {selected.NavText}"; 
+        }
+
+        private void GridDrag(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

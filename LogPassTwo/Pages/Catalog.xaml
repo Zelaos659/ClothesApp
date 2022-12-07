@@ -8,9 +8,7 @@
       d:DesignHeight="418" d:DesignWidth="670"
       Title="Catalog">
 
-    <Grid>
+    <Grid Background="Black">
 
-        
-        
     </Grid>
 </Page>

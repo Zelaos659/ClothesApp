@@ -33,8 +33,9 @@ namespace LogPassTwo.Pages
             if (MainWindow.user.Access == "Admin") 
                 mainWindow.AddNav.Visibility = Visibility.Visible;
 
-            mainWindow.navframe.Content = null;
-            mainWindow.ProfileNav.NavUri = new Uri("Pages/Catalog.xaml");
+            mainWindow.ProfileNav.NavUri = new Uri("Pages/ProfilePage.xaml", UriKind.Relative);
+            mainWindow.sidebar.SelectedItem = null;
+            mainWindow.sidebar.SelectedItem = mainWindow.ProfileNav;
 
             // напохуй сделать тут же изменение навЛинков при авторизированном пользователе. 
         }

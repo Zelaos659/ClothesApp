@@ -11,13 +11,15 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         AllowsTransparency="True"
-        Background="Transparent">
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
     
     <!-- WindowFrame (grid) -->
     
     <Grid Height="454"
           Width="808"
-          Background="#505050">
+          Background="#505050"
+          MouseLeftButtonDown="GridDrag">
         
         <!-- ToolBar -->
 

@@ -44,7 +44,7 @@ namespace LogPass
                 { 
                   Login = log,
                   Password = md5.hashPassword(pass),
-                  Access = "Admin"
+                  Access = "Customer"
                 };
 
                 BD.Users.Add(user);
