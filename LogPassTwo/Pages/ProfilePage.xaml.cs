@@ -30,7 +30,16 @@ namespace LogPassTwo.Pages
         private void logoutBtn(object sender, RoutedEventArgs e)
         {
             //txts.Text = MainWindow.user.Login;
-            DialogResult result = CustomMSGbox.Show("Вы точно хотите выйти?", CustomMSGbox.MsgTitle.Ошибка, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
+            DialogResult result = CustomMSGbox.Show("Вы точно хотите выйти?", CustomMSGbox.MsgTitle.Внимание, CustomMSGbox.MsgButtons.Да, CustomMSGbox.MsgButtons.Нет);
+            if (result == DialogResult.Yes)
+            {
+                MainWindow.user = null;
+                mainWindow.AddNav.Visibility = Visibility.Hidden;
+                mainWindow.AllOrdNav.Visibility = Visibility.Hidden;
+                mainWindow.ProfileNav.NavUri = new Uri("Pages/AuthPage.xaml", UriKind.Relative);
+                mainWindow.sidebar.SelectedItem = null;
+                mainWindow.sidebar.SelectedItem = mainWindow.ProfileNav;
+            }
         }
     }
 }

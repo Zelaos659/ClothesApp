@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:LogPassTwo"
         mc:Ignorable="d"
-        Title="CustomMSGbox" Height="150" Width="300" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Topmost="True" BorderBrush="Black" BorderThickness="2">
+        Title="CustomMSGbox" Height="150" Width="300" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Topmost="True" BorderBrush="#505050" BorderThickness="4">
     <Grid Background="#B6B6B6">
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
@@ -43,7 +43,7 @@
                    Grid.Column="1"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
-                   Margin="0,8,0,0"
+                   Margin="0,6,0,0"
                    FontSize="12"
                    FontWeight="Bold"
                    Text="Ошибка"/>

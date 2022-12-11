@@ -12,7 +12,6 @@ namespace LogPass.Data
         
         public string? Login { get; set; }
 
-        // Шифрование через set;
         public string? Password { get; set; }
 
         public string? Access { get; set; }

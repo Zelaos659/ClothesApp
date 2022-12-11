@@ -52,34 +52,23 @@
                 Margin="158,255,0,0"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Content="Login"
+                Content="Авторизироваться"
                 FontSize="15"
                 Style="{StaticResource MainBtn}"
                 Click="LoginBtn"/>
 
 
-        <Button Width="90"
+        <Button Width="230"
                 Height="34"
                 Margin="158,300,0,0"
                 Background="#D9D9D9"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 BorderThickness="0"
-                Content="Register"
+                Content="Создать аккаунт"
                 FontSize="15"
                 Style="{StaticResource MainBtn}"
                 Click="RegBtn"/>
-
-        <Button Width="130"
-                Height="34"
-                Margin="258,300,0,0"
-                Background="#D9D9D9"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                Content="Forget password"
-                FontSize="15"
-                Style="{StaticResource MainBtn}"
-                Click="ResetBD"/>
 
     </Grid>
 </Page>

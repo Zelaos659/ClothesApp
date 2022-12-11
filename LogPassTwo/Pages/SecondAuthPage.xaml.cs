@@ -1,5 +1,4 @@
-﻿using LogPass.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +16,13 @@ using System.Windows.Shapes;
 namespace LogPassTwo.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Catalog.xaml
+    /// Логика взаимодействия для SecondAuthPage.xaml
     /// </summary>
-    public partial class Catalog : Page
+    public partial class SecondAuthPage : Page
     {
-        ApplicationContext bd = new ApplicationContext();
-        public Catalog()
+        public SecondAuthPage()
         {
             InitializeComponent();
-            ListProducts.ItemsSource = bd.Users.ToList();
         }
     }
 }

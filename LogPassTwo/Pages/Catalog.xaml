@@ -8,7 +8,141 @@
       d:DesignHeight="418" d:DesignWidth="670"
       Title="Catalog">
 
-    <Grid Background="Black">
+    <Grid>
 
+        <ScrollViewer Margin="0 20 20 20">
+
+            <StackPanel>
+                
+                <TextBlock Text="Товары" 
+                           VerticalAlignment="Center" 
+                           FontSize="20" 
+                           FontWeight="Bold"
+                           Margin="220,0,0,0"/>
+
+                <StackPanel Margin="20 0">
+
+                    <ItemsControl x:Name="ListProducts" ItemsSource="{Binding User}">
+
+                        <ItemsControl.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <Border Margin="10" 
+                                        Width="110" 
+                                        Height="160" 
+                                        BorderThickness="1" 
+                                        BorderBrush="#505050">
+                                    
+                                    <Grid>
+
+                                        <Border Background="Transparent" x:Name="blurArea">
+                                    
+                                            <StackPanel>
+
+                                                <Image Source="lls.jpg" Width="100" Height="100" Margin="5"/>
+
+                                                <TextBlock Margin="5" Text="$2000,00" FontSize="14" FontFamily="Franklin Gothic Medium"/>
+                                                <TextBlock Margin="5 0" Text="{Binding Login}" FontSize="13"/>
+
+                                            </StackPanel>
+
+                                            <Border.Effect>
+                                                <BlurEffect Radius="0"/>
+                                            </Border.Effect>
+
+                                        </Border>
+
+                                        <TextBlock x:Name="txtDesc"
+                                           Text="Хлопок 100 яица вкусно негры круто"
+                                           Margin="5 200 5 0"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Center"
+                                           TextWrapping="Wrap"
+                                           FontSize="14"/>
+                                    </Grid>
+
+                                    <Border.Triggers>
+
+                                        <EventTrigger RoutedEvent="MouseEnter">
+
+                                            <BeginStoryboard>
+
+                                                <Storyboard>
+
+                                                    <DoubleAnimation Storyboard.TargetName="blurArea" Duration="0:0:0.30"
+                                                             Storyboard.TargetProperty="(Effect).Radius"
+                                                             From="0"
+                                                             To="7"/>
+
+                                                    <ThicknessAnimation Storyboard.TargetName="txtDesc" Duration="0:0:0.70"
+                                                                Storyboard.TargetProperty="Margin"
+                                                                From="5 200 5 0"
+                                                                To="5 30 5 0">
+
+                                                        <ThicknessAnimation.EasingFunction>
+
+                                                            <CubicEase EasingMode="EaseOut"/>
+
+                                                        </ThicknessAnimation.EasingFunction>
+
+                                                    </ThicknessAnimation>
+
+                                                </Storyboard>
+
+                                            </BeginStoryboard>
+
+                                        </EventTrigger>
+
+                                        <EventTrigger RoutedEvent="MouseLeave">
+
+                                            <BeginStoryboard>
+
+                                                <Storyboard>
+
+                                                    <DoubleAnimation Storyboard.TargetName="blurArea" Duration="0:0:0.30"
+                                                             Storyboard.TargetProperty="(Effect).Radius"/>
+
+                                                    <ThicknessAnimation Storyboard.TargetName="txtDesc" Duration="0:0:0.70"
+                                                                Storyboard.TargetProperty="Margin">
+
+
+                                                        <ThicknessAnimation.EasingFunction>
+
+                                                            <CubicEase EasingMode="EaseOut"/>
+
+                                                        </ThicknessAnimation.EasingFunction>
+
+
+                                                    </ThicknessAnimation>
+
+                                                </Storyboard>
+
+                                            </BeginStoryboard>
+
+                                        </EventTrigger>
+
+                                    </Border.Triggers>
+
+                                </Border>
+
+                            </DataTemplate>
+                            
+                        </ItemsControl.ItemTemplate>
+
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        
+                    </ItemsControl>
+                    
+                </StackPanel>
+                
+            </StackPanel>
+            
+        </ScrollViewer>
+        
     </Grid>
 </Page>
