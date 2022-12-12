@@ -23,7 +23,8 @@ namespace LogPassTwo.Data
         [Column(TypeName = "image")]
         public byte[] Photo { get; set; }
 
-        public BitmapSource sass { get { return WorkWithBD.ConvertByteToImage(Photo); } }
-        public string ass { get { return $"{Price} ₽"; } }
+        public BitmapSource ImgFromBD { get { return WorkWithBD.ConvertByteToImage(Photo); } }
+        public string PriceString { get { return $"{Price} ₽"; } }
+        //public string CountString { get { return $"На складе: {Count}" }
     }
 }

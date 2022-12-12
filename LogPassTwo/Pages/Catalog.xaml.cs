@@ -26,7 +26,7 @@ namespace LogPassTwo.Pages
         public Catalog()
         {
             InitializeComponent();
-            ListProducts.ItemsSource = bd.Products.ToList();
+            //ListProducts.ItemsSource = bd.Products.ToList();
         }
     }
 }
