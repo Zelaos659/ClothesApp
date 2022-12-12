@@ -1,4 +1,5 @@
 ﻿using LogPass.Data;
+using LogPassTwo.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace LogPassTwo.Pages
         public Catalog()
         {
             InitializeComponent();
-            ListProducts.ItemsSource = bd.Users.ToList();
+            ListProducts.ItemsSource = bd.Products.ToList();
         }
     }
 }

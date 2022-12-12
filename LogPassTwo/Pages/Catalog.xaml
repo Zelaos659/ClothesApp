@@ -20,9 +20,9 @@
                            FontWeight="Bold"
                            Margin="220,0,0,0"/>
 
-                <StackPanel Margin="20 0">
+                <StackPanel Margin="0 0 10 0">
 
-                    <ItemsControl x:Name="ListProducts" ItemsSource="{Binding User}">
+                    <ItemsControl x:Name="ListProducts" ItemsSource="{Binding Product}">
 
                         <ItemsControl.ItemTemplate>
 
@@ -33,17 +33,17 @@
                                         Height="160" 
                                         BorderThickness="1" 
                                         BorderBrush="#505050">
-                                    
+
                                     <Grid>
 
                                         <Border Background="Transparent" x:Name="blurArea">
-                                    
+
                                             <StackPanel>
 
-                                                <Image Source="lls.jpg" Width="100" Height="100" Margin="5"/>
+                                                <Image Source="{Binding sass}" Width="100" Height="100" Margin="5"/>
 
-                                                <TextBlock Margin="5" Text="$2000,00" FontSize="14" FontFamily="Franklin Gothic Medium"/>
-                                                <TextBlock Margin="5 0" Text="{Binding Login}" FontSize="13"/>
+                                                <TextBlock Margin="5" Text="{Binding ass}" FontSize="14" FontFamily="Franklin Gothic Medium"/>
+                                                <TextBlock Margin="5 0" Text="{Binding Title}" FontSize="13"/>
 
                                             </StackPanel>
 
@@ -54,12 +54,15 @@
                                         </Border>
 
                                         <TextBlock x:Name="txtDesc"
-                                           Text="Хлопок 100 яица вкусно негры круто"
+                                           Text="{Binding Description}"
                                            Margin="5 200 5 0"
                                            VerticalAlignment="Top"
                                            HorizontalAlignment="Center"
                                            TextWrapping="Wrap"
-                                           FontSize="14"/>
+                                           FontSize="15"
+                                                   FontStyle="Italic"
+                                                   Background="#505050"
+                                                   Foreground="White"/>
                                     </Grid>
 
                                     <Border.Triggers>
@@ -125,6 +128,7 @@
                                     </Border.Triggers>
 
                                 </Border>
+
 
                             </DataTemplate>
                             

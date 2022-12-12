@@ -1,7 +1,10 @@
-﻿using System;
+﻿using LogPass;
+using LogPassTwo.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +24,7 @@ namespace LogPassTwo.Pages
     /// </summary>
     public partial class AddingClothesPage : Page
     {
+        string path;
         public AddingClothesPage()
         {
             InitializeComponent();
@@ -34,8 +38,20 @@ namespace LogPassTwo.Pages
             OFDialog.Multiselect = false;
             if (OFDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                imgASD.Source = new BitmapImage(new Uri(OFDialog.FileName));
+                path = OFDialog.FileName;
+                img.Source = new BitmapImage(new Uri(OFDialog.FileName));
             }
+        }
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void AddBtn(object sender, RoutedEventArgs e)
+        {
+            WorkWithBD.SaveProduct(txtTitle.Text, txtDesc.Text, txtPrice.Text, path);
         }
     }
 }
