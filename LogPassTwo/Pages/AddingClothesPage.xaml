@@ -42,7 +42,7 @@
         <TextBox x:Name="txtDesc"
                  Width="220"
                  MaxHeight="400"
-                 MaxLength="120"
+                 MaxLength="50"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Left"

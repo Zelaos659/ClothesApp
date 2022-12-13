@@ -89,13 +89,14 @@ namespace LogPass
             }
         }
 
-        public static void SaveProduct(string _title, string _desc, string _price, string _photo)
+        public static void SaveProduct(string _title, string _desc, string _price, string _count,string _photo)
         {
             Product prod = new Product()
             {
                 Title = _title,
                 Description = _desc,
                 Price = Convert.ToDecimal(_price),
+                Count = Convert.ToInt32(_count),
                 Photo = ConvertFileToByte(_photo)
             };
             using(var BD = new ApplicationContext())

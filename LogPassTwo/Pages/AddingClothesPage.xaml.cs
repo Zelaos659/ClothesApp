@@ -51,7 +51,7 @@ namespace LogPassTwo.Pages
 
         private void AddBtn(object sender, RoutedEventArgs e)
         {
-            WorkWithBD.SaveProduct(txtTitle.Text, txtDesc.Text, txtPrice.Text, path);
+            WorkWithBD.SaveProduct(txtTitle.Text, txtDesc.Text, txtPrice.Text, txtCount.Text, path);
         }
     }
 }
