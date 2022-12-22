@@ -51,7 +51,7 @@ namespace LogPassTwo.Pages
                 CustomMSGbox.Show("Авторизируйтесь для заказа!", CustomMSGbox.MsgTitle.Ошибка, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
                 return;
             }
-            if (MainWindow.user.Access == "Админ")
+            if (MainWindow.user.Access == "Admin")
             {
                 CustomMSGbox.Show("Тест", CustomMSGbox.MsgTitle.Инфо, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
                 return;

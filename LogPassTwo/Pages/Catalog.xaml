@@ -93,7 +93,7 @@
                                                     Content="Заказать"
                                                     Click="Button_Click"
                                                     Style="{StaticResource MainBtn}"/>
-                                            
+
                                         </StackPanel>
 
                                     </Grid>
