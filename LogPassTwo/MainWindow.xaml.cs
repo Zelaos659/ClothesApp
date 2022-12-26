@@ -21,7 +21,10 @@ namespace LogPassTwo
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal static User user = null;
+        // internal static User user = null;
+
+        static ApplicationContext bd = new ApplicationContext();
+        internal static User user = bd.Users.FirstOrDefault(p=>p.Login == "tatsuki");
 
         public MainWindow()
         {
@@ -30,7 +33,7 @@ namespace LogPassTwo
 
         private void ResizeWindow(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void HideWindow(object sender, RoutedEventArgs e)

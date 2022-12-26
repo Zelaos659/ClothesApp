@@ -12,6 +12,11 @@ namespace LogPassTwo.Data
 {
     internal class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            Order = new HashSet<Order>();
+        }
         public int ProductId { get; set; }
 
         public string? Title { get; set; }
@@ -28,5 +33,8 @@ namespace LogPassTwo.Data
         public BitmapSource ImgFromBD { get { return WorkWithBD.ConvertByteToImage(Photo); } }
         public string PriceString { get { return $"{Price} ₽"; } }
         public string CountString { get { return $"На складе: \t{Count}"; } }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

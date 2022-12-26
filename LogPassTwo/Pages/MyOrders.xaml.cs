@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogPass.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace LogPassTwo.Pages
     /// </summary>
     public partial class MyOrders : Page
     {
+        ApplicationContext bd = new ApplicationContext();
         public MyOrders()
         {
             InitializeComponent();
+            ListProducts.ItemsSource = bd.Orders.ToList();
         }
     }
 }
