@@ -1,4 +1,5 @@
 ﻿using LogPass;
+using LogPass.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace LogPassTwo.Pages
     /// </summary>
     public partial class AuthPage : Page
     {
+        ApplicationContext bd = new ApplicationContext();
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         public AuthPage()
         {
@@ -53,9 +55,16 @@ namespace LogPassTwo.Pages
 
         private void RegBtn(object sender, RoutedEventArgs e)
         {
-            if (asd())
+            if (asd() && bd.Users.FirstOrDefault(p => p.Login == loginBox.Text) == null)
             {
-                WorkWithBD.Register(loginBox.Text, passBox.Password);
+                var user = new User()
+                {
+                    Login = loginBox.Text,
+                    Password = passBox.Password,
+                    Access = "Customer"
+                };
+                MainWindow.user = user;
+                mainWindow.navframe.Navigate(new Uri("Pages/SecondAuthPage.xaml", UriKind.Relative));
             }
         }
 

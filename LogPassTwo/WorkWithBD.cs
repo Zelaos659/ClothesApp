@@ -1,4 +1,5 @@
 ﻿using LogPass.Data;
+using LogPassTwo;
 using LogPassTwo.Data;
 using System;
 using System.Collections.Generic;
@@ -36,21 +37,10 @@ namespace LogPass
             }
         }
 
-        public static bool Register(string log, string pass)
+        public static bool Register(User user)
         {
             using(var BD = new ApplicationContext())
             {
-
-                if (BD.Users.FirstOrDefault(x => x.Login == log) != null)
-                    return false;
-
-                var user = new User() 
-                { 
-                  Login = log,
-                  Password = md5.hashPassword(pass),
-                  Access = "Customer"
-                };
-
                 BD.Users.Add(user);
                 BD.SaveChanges();
                 return true;

@@ -62,15 +62,16 @@ namespace LogPassTwo.Pages
                 return;
             }
             CustomMSGbox.Show("Товар заказан", CustomMSGbox.MsgTitle.Инфо, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
-            prod.Count--;
+            
             var ord = new Order()
             {
-                Product = prod,
-                User = MainWindow.user,
+                ProductId = prod.ProductId,
+                UserId = MainWindow.user.UserId,
                 Status = "Новый",
                 TrackNumber = ""
             };
             bd.Orders.Add(ord);
+            prod.Count--;
             bd.SaveChanges();
             ListProducts.ItemsSource = bd.Products.ToList();
         }
