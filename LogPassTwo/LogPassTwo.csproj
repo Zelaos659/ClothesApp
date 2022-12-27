@@ -9,18 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Pages\lls.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Pages\lls.jpg" />
   </ItemGroup>
 
 </Project>

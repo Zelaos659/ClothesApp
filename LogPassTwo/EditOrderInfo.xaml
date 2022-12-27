@@ -19,7 +19,7 @@
         <GroupBox BorderThickness="0" x:Name="GroupTrack" Visibility="Hidden">
             <Grid>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Изменение трек-номера" FontWeight="Bold" Margin="0 10"/>
-                <TextBox x:Name="txtTrack" Width="240" Height="24" FontSize="14" MaxLength="24" TextAlignment="Center" Style="{StaticResource InBox}"/>
+                <TextBox x:Name="txtTrack" Width="240" Height="24" FontSize="14" MaxLength="14" TextAlignment="Center" Style="{StaticResource InBox}"/>
                 <Button Margin="0 100 0 0" Width="120" Height="24" FontSize="14" Style="{StaticResource MainBtn}" Content="Изменить" Click="editNum"/>
             </Grid>
         </GroupBox>

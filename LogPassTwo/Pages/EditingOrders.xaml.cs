@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,6 +38,7 @@ namespace LogPassTwo.Pages
                 var ord = bd.Orders.FirstOrDefault(p => p.OrderId == (dgOrd.SelectedItem as Order).OrderId);
                 ord.TrackNumber = EditOrderInfo.Show(1);
                 bd.SaveChanges();
+                searchTxt.Text = "";
                 dgOrd.ItemsSource = bd.Orders.Include(p => p.User).ToList();
             }
             else
@@ -50,10 +52,25 @@ namespace LogPassTwo.Pages
                 var ord = bd.Orders.FirstOrDefault(p => p.OrderId == (dgOrd.SelectedItem as Order).OrderId);
                 ord.Status = EditOrderInfo.Show(2);
                 bd.SaveChanges();
+                searchTxt.Text = "";
                 dgOrd.ItemsSource = bd.Orders.Include(p => p.User).ToList();
             }
             else
                 CustomMSGbox.Show("Для изменения выберите заказ!", CustomMSGbox.MsgTitle.Ошибка, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
+        }
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (searchTxt.Text != "")
+                dgOrd.ItemsSource = bd.Orders.Where(p => p.OrderId == Convert.ToInt32(searchTxt.Text)).Include(p => p.User).ToList();
+            else
+                dgOrd.ItemsSource = bd.Orders.Include(p => p.User).ToList();
         }
     }
 }

@@ -17,8 +17,8 @@ namespace LogPass.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Server=DESKTOP-S0IVJPK;Database=ClothesAppBD;Trusted_Connection=True;Encrypt=False;");
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-S0IVJPK;Database=ILOVEBDSOMUCH;Trusted_Connection=True;Encrypt=False;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-S0IVJPK;Database=ClothesAppBD;Trusted_Connection=True;Encrypt=False;");
+            //optionsBuilder.UseSqlServer(@"Server=DESKTOP-S0IVJPK;Database=ILOVEBDSOMUCH;Trusted_Connection=True;Encrypt=False;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
