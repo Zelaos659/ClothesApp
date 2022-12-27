@@ -61,6 +61,11 @@ namespace LogPassTwo.Pages
                 CustomMSGbox.Show("Товара не осталось на складе.",CustomMSGbox.MsgTitle.Ошибка,CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
                 return;
             }
+            if (bd.Orders.Count(p=>p.UserId == MainWindow.user.UserId && p.Status != "Получено") >= 10)
+            {
+                CustomMSGbox.Show("Нельзя заказать больше 10-ти товаров.", CustomMSGbox.MsgTitle.Ошибка, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
+                return;
+            }
             CustomMSGbox.Show("Товар заказан", CustomMSGbox.MsgTitle.Инфо, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
             
             var ord = new Order()

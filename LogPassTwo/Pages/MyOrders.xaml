@@ -10,7 +10,7 @@
 
     <Grid>
 
-        <ScrollViewer Margin="0 20 20 20">
+        <ScrollViewer Margin="0 30 20 5">
 
             <StackPanel>
 
@@ -57,6 +57,13 @@
 
                                             <TextBlock HorizontalAlignment="Center" Width="240" Text="{Binding Product.Description}" TextWrapping="Wrap" TextAlignment="Center" Margin="0 5 0 0" FontSize="18"/>
 
+                                            <StackPanel VerticalAlignment="Bottom" Margin="20 0 0 10" Orientation="Horizontal">
+
+                                                <Button Click="DelOrd" Content="Удалить заказ" Tag="{Binding OrderId}" Style="{StaticResource MainBtn}" Width="100" Height="20" Margin="5"/>
+                                                <Button Click="ClaimOrd" Content="Заказ получил" Tag="{Binding OrderId}" Style="{StaticResource MainBtn}" Width="100" Height="20" Margin="5"/>
+
+                                            </StackPanel>
+                                            
                                         </StackPanel>
 
                                     </StackPanel>
@@ -74,6 +81,8 @@
             </StackPanel>
 
         </ScrollViewer>
+
+        <Button x:Name="xBtn" Content="Показать полученные товары" Width="180" Height="20" Style="{StaticResource MainBtn}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 5 20 0" Click="xBtn_Click"/>
 
     </Grid>
 </Page>
