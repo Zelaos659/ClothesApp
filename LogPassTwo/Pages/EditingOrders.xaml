@@ -13,9 +13,6 @@
         <Button Width="220" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 15" Content="Добавление/изменение трек-номера" Style="{StaticResource MainBtn}" Click="TNumEdit"/>
         <Button Width="180" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 250 15" Content="Изменение статуса заказа" Style="{StaticResource MainBtn}" Click="EditStat"/>
 
-        <TextBlock Text="Поиск по ID заказа" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50 0 0 20"/>
-        <TextBox x:Name="searchTxt" Width="70" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="160 0 0 15" Style="{StaticResource InBox}" PreviewTextInput="TextBox_PreviewTextInput" KeyUp="TextBox_KeyUp"/>
-
         <DataGrid Margin="15 10 15 50" ItemsSource="{Binding Order}" x:Name="dgOrd" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID заказа" Binding="{Binding OrderId}" Width="40"/>
