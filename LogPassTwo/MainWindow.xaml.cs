@@ -49,7 +49,7 @@ namespace LogPassTwo
 
             var selected = sidebar.SelectedItem as NavButton;
 
-            if (sidebar.SelectedItem == OrdersNav && MainWindow.user != null)
+            if (sidebar.SelectedItem == OrdersNav && user == null)
             {
                 CustomMSGbox.Show("Для просмотра заказов необходимо авторизироваться!",CustomMSGbox.MsgTitle.Инфо,CustomMSGbox.MsgButtons.Ок,CustomMSGbox.MsgButtons.Нет);
                 sidebar.SelectedItem = ProfileNav;
