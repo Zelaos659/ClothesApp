@@ -146,6 +146,9 @@
 
             <Frame x:Name="navframe" Grid.Column="1" NavigationUIVisibility="Hidden"/>
 
+            <DataGrid Grid.Column="1" x:Name="lssl" ItemsSource="{Binding Order}" Visibility="Hidden" >
+            </DataGrid>
+            
         </Grid>
 
     </Grid>

@@ -53,7 +53,7 @@ namespace LogPassTwo.Pages
         private void AddBtn(object sender, RoutedEventArgs e)
         {
             WorkWithBD.SaveProduct(txtTitle.Text, txtDesc.Text, txtPrice.Text, txtCount.Text, path);
-            CustomMSGbox.Show("Товар добавлен",CustomMSGbox.MsgTitle.Инфо,CustomMSGbox.MsgButtons.Ок,CustomMSGbox.MsgButtons.Отмена)
+            CustomMSGbox.Show("Товар добавлен", CustomMSGbox.MsgTitle.Инфо, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Отмена);
         }
     }
 }

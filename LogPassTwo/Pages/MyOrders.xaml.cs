@@ -1,4 +1,5 @@
 ﻿using LogPass.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace LogPassTwo.Pages
         public MyOrders()
         {
             InitializeComponent();
-            ListProducts.ItemsSource = bd.Orders.ToList();
+            ListProducts.ItemsSource = bd.Orders.Where(p=>p.UserId == MainWindow.user.UserId).Include(p=>p.Product).ToList();
         }
     }
 }

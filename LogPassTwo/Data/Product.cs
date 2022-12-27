@@ -29,7 +29,7 @@ namespace LogPassTwo.Data
         public string PriceString { get { return $"{Price} ₽"; } }
         public string CountString { get { return $"На складе: \t{Count}"; } }
 
-        public List<Order> Orders { get; set; } = new();
+        public virtual List<Order> Orders { get; set; } = new();
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using LogPass.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace LogPassTwo
         public MainWindow()
         {
             InitializeComponent();
+            lssl.ItemsSource = bd.Orders.Include(p=>p.User).
+                ToList();
         }
 
         private void ResizeWindow(object sender, RoutedEventArgs e)

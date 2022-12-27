@@ -26,6 +26,6 @@ namespace LogPass.Data
 
         public string? Access { get; set; }
 
-        public List<Order> Orders { get; set; } = new();
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

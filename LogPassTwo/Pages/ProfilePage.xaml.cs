@@ -25,6 +25,9 @@ namespace LogPassTwo.Pages
         public ProfilePage()
         {
             InitializeComponent();
+            fiTxt.Text = $"Фамилия имя: {MainWindow.user.SecondName} {MainWindow.user.FirstName}";
+            numberTxt.Text = $"Номер телефона: {MainWindow.user.PhoneNumber}";
+            addressTxt.Text = $"Адрес: {MainWindow.user.Address}";
         }
 
         private void logoutBtn(object sender, RoutedEventArgs e)

@@ -6,21 +6,36 @@
       xmlns:local="clr-namespace:LogPassTwo.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="418" d:DesignWidth="670"
-      Title="ProfilePage">
+      Title="ProfilePage" FontSize="18">
 
     <Grid>
 
-        <TextBlock x:Name="txts"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-        
+        <TextBlock x:Name="fiTxt"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="150 100 0 0"
+                   Text="Фамилия имя:"/>
+
+        <TextBlock x:Name="addressTxt"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="150 150 0 0"
+                   Text="Адрес:"/>
+
+        <TextBlock x:Name="numberTxt"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Margin="150 200 0 0"
+                   Text="Номер телефона:"/>
+
         <Button Style="{StaticResource MainBtn}"
                 Width="120"
                 Height="30"
                 VerticalAlignment="Bottom" HorizontalAlignment="Right"
                 Margin="0,0,30,30"
                 Content="Выйти из аккаунта"
-                Click="logoutBtn"/>
+                Click="logoutBtn"
+                FontSize="12"/>
 
     </Grid>
 </Page>
