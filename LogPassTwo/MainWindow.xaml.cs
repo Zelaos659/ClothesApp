@@ -28,8 +28,8 @@ namespace LogPassTwo
         public MainWindow()
         {
             InitializeComponent();
-            lssl.ItemsSource = bd.Orders.Include(p=>p.User).
-                ToList();
+            ShopNav.IsSelected = true;
+
         }
 
         private void ResizeWindow(object sender, RoutedEventArgs e)
