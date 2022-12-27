@@ -36,6 +36,7 @@
 
                                     <StackPanel Orientation="Horizontal">
 
+                                        <TextBlock Margin="5 5 0 0" VerticalAlignment="Top" Text="{Binding OrderId}"/>
                                         <Image Source="{Binding Product.ImgFromBD}" Margin="5" Width="150" Height="200" Stretch="Fill"/>
 
                                         <StackPanel Width="170">
@@ -43,7 +44,7 @@
                                             <TextBlock HorizontalAlignment="Center" Text="{Binding Product.Title}" Margin="0 20 0 0" FontSize="18"/>
                                             <TextBlock HorizontalAlignment="Center" Text="{Binding Product.PriceString}" Margin="0 0 0 0" FontSize="18"/>
 
-                                            <TextBlock HorizontalAlignment="Center" Text="Статус заказа" Margin="0 20 0 0" FontSize="18"/>
+                                            <TextBlock HorizontalAlignment="Center" Text="Статус заказа" Margin="0 10 0 0" FontSize="18"/>
                                             <TextBlock HorizontalAlignment="Center" Text="{Binding Status}" Margin="0 5 0 0" FontSize="18"/>
 
                                             <TextBlock HorizontalAlignment="Center" Text="Трек номер" Margin="0 10 0 0" FontSize="18"/>

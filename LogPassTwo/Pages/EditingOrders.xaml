@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LogPassTwo.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="418" d:DesignWidth="670"
       Title="EditingOrders">
 
     <Grid>
@@ -13,7 +13,17 @@
         <Button Width="220" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 15 15" Content="Добавление/изменение трек-номера" Style="{StaticResource MainBtn}" Click="TNumEdit"/>
         <Button Width="180" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 250 15" Content="Изменение статуса заказа" Style="{StaticResource MainBtn}" Click="EditStat"/>
 
-        <TextBlock x:Name="txtTest" Width="120" Height="30"/>
+        <DataGrid Margin="15 10 15 50" ItemsSource="{Binding Order}" x:Name="dgOrd" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID заказа" Binding="{Binding OrderId}" Width="40"/>
+                <DataGridTextColumn Header="ID пользователя" Binding="{Binding UserId}" Width="50"/>
+                <DataGridTextColumn Header="ID продукта" Binding="{Binding ProductId}" Width="50"/>
+                <DataGridTextColumn Header="Адрес пользователя" Binding="{Binding User.Address}" Width="170"/>
+                <DataGridTextColumn Header="Номер пользователя" Binding="{Binding User.PhoneNumber}"/>
+                <DataGridTextColumn Header="Статус заказа" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Трек-номер" Binding="{Binding TrackNumber}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>

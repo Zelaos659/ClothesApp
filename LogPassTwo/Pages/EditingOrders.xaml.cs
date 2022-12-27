@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LogPass.Data;
+using LogPassTwo.Data;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +23,37 @@ namespace LogPassTwo.Pages
     /// </summary>
     public partial class EditingOrders : Page
     {
+        ApplicationContext bd = new ApplicationContext();
         public EditingOrders()
         {
             InitializeComponent();
+            dgOrd.ItemsSource = bd.Orders.Include(p => p.User).ToList();
         }
 
         private void TNumEdit(object sender, RoutedEventArgs e)
         {
-            txtTest.Text = EditOrderInfo.Show(1);
+            if (dgOrd.SelectedItem != null)
+            {
+                var ord = bd.Orders.FirstOrDefault(p => p.OrderId == (dgOrd.SelectedItem as Order).OrderId);
+                ord.TrackNumber = EditOrderInfo.Show(1);
+                bd.SaveChanges();
+                dgOrd.ItemsSource = bd.Orders.Include(p => p.User).ToList();
+            }
+            else
+                CustomMSGbox.Show("Для изменения выберите заказ!", CustomMSGbox.MsgTitle.Ошибка, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
         }
 
         private void EditStat(object sender, RoutedEventArgs e)
         {
-            txtTest.Text = EditOrderInfo.Show(2);
+            if (dgOrd.SelectedItem != null)
+            {
+                var ord = bd.Orders.FirstOrDefault(p => p.OrderId == (dgOrd.SelectedItem as Order).OrderId);
+                ord.Status = EditOrderInfo.Show(2);
+                bd.SaveChanges();
+                dgOrd.ItemsSource = bd.Orders.Include(p => p.User).ToList();
+            }
+            else
+                CustomMSGbox.Show("Для изменения выберите заказ!", CustomMSGbox.MsgTitle.Ошибка, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Нет);
         }
     }
 }
