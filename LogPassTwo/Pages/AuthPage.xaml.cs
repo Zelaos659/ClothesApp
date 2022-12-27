@@ -55,16 +55,21 @@ namespace LogPassTwo.Pages
 
         private void RegBtn(object sender, RoutedEventArgs e)
         {
-            if (asd() && bd.Users.FirstOrDefault(p => p.Login == loginBox.Text) == null)
+            if (bd.Users.FirstOrDefault(p => p.Login == loginBox.Text) != null)
+                CustomMSGbox.Show("Пользователь с таким логином уже существует!", CustomMSGbox.MsgTitle.Ошибка, CustomMSGbox.MsgButtons.Ок, CustomMSGbox.MsgButtons.Отмена);
+            else
             {
-                var user = new User()
+                if (asd())
                 {
-                    Login = loginBox.Text,
-                    Password = passBox.Password,
-                    Access = "Customer"
-                };
-                MainWindow.user = user;
-                mainWindow.navframe.Navigate(new Uri("Pages/SecondAuthPage.xaml", UriKind.Relative));
+                    var user = new User()
+                    {
+                        Login = loginBox.Text,
+                        Password = md5.hashPassword(passBox.Password),
+                        Access = "Customer"
+                    };
+                    MainWindow.user = user;
+                    mainWindow.navframe.Navigate(new Uri("Pages/SecondAuthPage.xaml", UriKind.Relative));
+                }
             }
         }
 

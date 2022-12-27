@@ -37,13 +37,12 @@ namespace LogPass
             }
         }
 
-        public static bool Register(User user)
+        public static void Register(User user)
         {
             using(var BD = new ApplicationContext())
             {
                 BD.Users.Add(user);
                 BD.SaveChanges();
-                return true;
             }
         }
 

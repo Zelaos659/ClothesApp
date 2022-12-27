@@ -21,10 +21,8 @@ namespace LogPassTwo
     /// </summary>
     public partial class MainWindow : Window
     {
-        // internal static User user = null;
-
+        internal static User user = null;
         static ApplicationContext bd = new ApplicationContext();
-        internal static User user = bd.Users.FirstOrDefault(p=>p.Login == "tatsuki");
 
         public MainWindow()
         {
@@ -51,7 +49,7 @@ namespace LogPassTwo
 
             var selected = sidebar.SelectedItem as NavButton;
 
-            if (sidebar.SelectedItem == OrdersNav && MainWindow.user.FirstName == null)
+            if (sidebar.SelectedItem == OrdersNav && MainWindow.user != null)
             {
                 CustomMSGbox.Show("Для просмотра заказов необходимо авторизироваться!",CustomMSGbox.MsgTitle.Инфо,CustomMSGbox.MsgButtons.Ок,CustomMSGbox.MsgButtons.Нет);
                 sidebar.SelectedItem = ProfileNav;
